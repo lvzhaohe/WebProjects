@@ -30,12 +30,11 @@
 </head>
 <body class="skin-blue sidebar-mini sidebar-collapse" style="height: auto; min-height: 100%;">
     <div class="wrapper" style="height: auto; min-height: 100%;">
-        <!-- Main Header -->
         <header class="main-header">
             <!-- Logo -->
             <a href="index.html" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
-                <span class="logo-mini"><b>B&amp;R</b></span>
+                <span class="logo-mini"><b>B&R</b></span>
                 <!-- logo for regular state and mobile devices -->
                 <span class="logo-lg"><b>THE</b> Belt and Road</span>
             </a>
@@ -80,24 +79,22 @@
                                 <!-- The user image in the navbar-->
                                 <img src="../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                <span class="hidden-xs">Alexander Pierce</span>
+                                <span class="hidden-xs">Administrator</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
                                     <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                                     <p>
-                                        Alexander Pierce - Web Developer
-                                        <small>Member since Nov. 2012</small>
+                                        Administrator
                                     </p>
                                 </li>
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="login.html" class="btn btn-default btn-flat">Sign out</a>
                                     </div>
                                 </li>
                             </ul>
@@ -117,7 +114,7 @@
                         <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>Alexander Pierce</p>
+                        <p>Administrator</p>
                         <!-- Status -->
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
@@ -126,27 +123,15 @@
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MENU</li>
                     <!-- Optionally, you can add icons to the links -->
-                    <li><a href="1.0.html"><i class="fa fa-link"></i> <span>Index</span></a></li>
-                    <li><a href="1.1.html"><i class="fa fa-link"></i> <span>Competition</span></a></li>
-                    <li><a href="2+.html"><i class="fa fa-link"></i> <span>Schedule</span></a></li>
-                    <li><a href="3+.html"><i class="fa fa-link"></i> <span>Break</span></a></li>
-                    <li><a href="5.html"><i class="fa fa-link"></i> <span>Round</span></a></li>
-                    <li><a href="5.2+.html"><i class="fa fa-link"></i> <span>Index</span></a></li>
-                    <li><a href="6.1+.html"><i class="fa fa-link"></i> <span>Competition</span></a></li>
-                    <li><a href="6.2+.html"><i class="fa fa-link"></i> <span>Schedule</span></a></li>
-                    <li><a href="7.1+.html"><i class="fa fa-link"></i> <span>Break</span></a></li>
-                    <li><a href="7.2.html"><i class="fa fa-link"></i> <span>Round</span></a></li>
-                    <li><a href="7.3.html"><i class="fa fa-link"></i> <span>Index</span></a></li>
-                    <li class="active"><a href="7.4+.html"><i class="fa fa-link"></i> <span>Competition</span></a></li>
-                    <li><a href="8+.html"><i class="fa fa-link"></i> <span>Schedule</span></a></li>
-                    <li><a href="9+.html"><i class="fa fa-link"></i> <span>Break</span></a></li>
-                    <li><a href="11.html"><i class="fa fa-link"></i> <span>Round</span></a></li>
+                    <li><a href="index.html"><i class="fa fa-link"></i> <span>Index</span></a></li>
+                    <li><a href="schedule.html"><i class="fa fa-link"></i> <span>Schedule</span></a></li>
                 </ul>
                 <!-- /.sidebar-menu -->
             </section>
             <!-- /.sidebar -->
         </aside>
         <!-- Content Wrapper. Contains page content -->
+
         <div class="content-wrapper">
             <div class="container">
                 <!-- START ACCORDION & CAROUSEL-->
@@ -179,16 +164,7 @@
         </div>
         <!-- /.content-wrapper -->
         <!-- Main Footer -->
-        <footer class="main-footer">
-            <div class="container">
-                <div class="pull-right hidden-xs">
-                    <b>Version</b> 1.1.0
-                </div>
-                <strong>Copyright © 2017-2018 <a href="https://yiban.cn">Yi Ban</a>.</strong> All rights
-                reserved.
-            </div>
-            <!-- /.container -->
-        </footer>
+        <div class="configFoot"></div>
         <!-- Control Sidebar -->
         <!-- /.control-sidebar -->
         <!-- Add the sidebar's background. This div must be placed
@@ -209,5 +185,15 @@
     <script src="../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../dist/js/demo.js"></script>
-
+      <script type="text/javascript">
+ 
+        $(document).ready(function () {
+ 
+            $('.configHead').load('header-nosider.html');
+ 
+            $('.configFoot').load('footer.html');
+ 
+        });
+ 
+    </script>
 </body></html>
