@@ -25,14 +25,13 @@
     <![endif]-->
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
-    <link rel="stylesheet" href="../dist/css/clock.css">
+    <link rel="stylesheet" href="../dist/jcountdown/jcountdown.css">
     <!--[if IE]>
         <script src="http://libs.useso.com/js/html5shiv/3.7/html5shiv.min.js"></script>
     <![endif]-->
 </head>
 <body class="hold-transition skin-blue sidebar-mini  sidebar-collapse">
     <div class="wrapper">
-        <!-- Main Header -->
         <header class="main-header">
             <!-- Logo -->
             <a href="index.html" class="logo">
@@ -82,24 +81,22 @@
                                 <!-- The user image in the navbar-->
                                 <img src="../dist/img/user2-160x160.jpg" class="user-image" alt="User Image">
                                 <!-- hidden-xs hides the username on small devices so only the image appears. -->
-                                <span class="hidden-xs">Alexander Pierce</span>
+                                <span class="hidden-xs">Administrator</span>
                             </a>
                             <ul class="dropdown-menu">
                                 <!-- The user image in the menu -->
                                 <li class="user-header">
                                     <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                                     <p>
-                                        Alexander Pierce - Web Developer
-                                        <small>Member since Nov. 2012</small>
+                                        Administrator
                                     </p>
                                 </li>
                                 <!-- Menu Footer-->
                                 <li class="user-footer">
                                     <div class="pull-left">
-                                        <a href="#" class="btn btn-default btn-flat">Profile</a>
                                     </div>
                                     <div class="pull-right">
-                                        <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                                        <a href="login.html" class="btn btn-default btn-flat">Sign out</a>
                                     </div>
                                 </li>
                             </ul>
@@ -122,7 +119,7 @@
                         <img src="../dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>Alexander Pierce</p>
+                        <p>Administrator</p>
                         <!-- Status -->
                         <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                     </div>
@@ -131,27 +128,13 @@
                 <ul class="sidebar-menu" data-widget="tree">
                     <li class="header">MENU</li>
                     <!-- Optionally, you can add icons to the links -->
-                    <li><a href="1.0.html"><i class="fa fa-link"></i> <span>Index</span></a></li>
-                    <li><a href="1.1.html"><i class="fa fa-link"></i> <span>Competition</span></a></li>
-                    <li><a href="2+.html"><i class="fa fa-link"></i> <span>Schedule</span></a></li>
-                    <li><a href="3+.html"><i class="fa fa-link"></i> <span>Break</span></a></li>
-                    <li><a href="5.html"><i class="fa fa-link"></i> <span>Round</span></a></li>
-                    <li><a href="5.2+.html"><i class="fa fa-link"></i> <span>Index</span></a></li>
-                    <li><a href="6.1+.html"><i class="fa fa-link"></i> <span>Competition</span></a></li>
-                    <li><a href="6.2+.html"><i class="fa fa-link"></i> <span>Schedule</span></a></li>
-                    <li><a href="7.1+.html"><i class="fa fa-link"></i> <span>Break</span></a></li>
-                    <li><a href="7.2.html"><i class="fa fa-link"></i> <span>Round</span></a></li>
-                    <li><a href="7.3.html"><i class="fa fa-link"></i> <span>Index</span></a></li>
-                    <li><a href="7.4+.html"><i class="fa fa-link"></i> <span>Competition</span></a></li>
-                    <li><a href="8+.html"><i class="fa fa-link"></i> <span>Schedule</span></a></li>
-                    <li class="active"><a href="9+.html"><i class="fa fa-link"></i> <span>Break</span></a></li>
-                    <li><a href="11.html"><i class="fa fa-link"></i> <span>Round</span></a></li>
+                    <li><a href="index.html"><i class="fa fa-link"></i> <span>Index</span></a></li>
+                    <li><a href="schedule.html"><i class="fa fa-link"></i> <span>Schedule</span></a></li>
                 </ul>
                 <!-- /.sidebar-menu -->
             </section>
             <!-- /.sidebar -->
         </aside>
-        <!-- Content Wrapper. Contains page content -->
         <div class="content-wrapper">
             <div class="container">
                 <!-- START ACCORDION & CAROUSEL-->
@@ -165,15 +148,22 @@
                     <!-- /.box -->
                 </div>
                 <!-- /.content -->
-                <div class="row" style="width:100%;text-align:center;margin:40px 0 0 0;">
-                    <div class="col-md-6" style="width:100%;text-align:center;margin:40px 0 0 0;">
+                <div class="row" style="width:100%;text-align:center;margin:40px auto;">
+                    <div class="col-md-6" style="width:100%;">
                         <div class="box box-solid">
                             <div class="box-body">
-                                <p>倒计时</p>
+                                <div class="starter-template">
+                                    <div class="panel panel-default" data-toggle="tooltip" data-placement="top" style="width:auto;border:none">
+                                        <div class="panel-body" style="width:auto;">
+                                            <div class="lead" id="clock"></div>
+                                            <div class="countdown"></div>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                             <!-- /.box-body -->
                         </div>
-                        
+
                         <!-- /.box -->
                     </div>
                     <!-- ./col -->
@@ -189,7 +179,7 @@
                 <div class="pull-right hidden-xs">
                     <b>Version</b> 1.1.0
                 </div>
-                <strong>Copyright &copy; 2017-2018 <a href="https://yiban.cn">Yi Ban</a>.</strong> All rights
+                <strong>Copyright &copy; 2017-2018 <a href="#">Organizing Committee of the competition</a>.</strong> All rights
                 reserved.
             </div>
             <!-- /.container -->
@@ -206,8 +196,8 @@
                 <div class="tab-pane active" id="control-sidebar-home-tab">
                     <ul class="control-sidebar-menu" style="margin:300px auto">
                         <li>
-                            <button type="button" class="btn btn-block btn-success btn-default" id="btn-resume" onClick="cut();" style="margin:10px auto;color:#ffffff">Count down</button>
-                            <button type="button" class="btn btn-block btn-info" onClick="sure();" style="margin:10px auto">Next Session</button>
+                            <button type="button" class="btn btn-block btn-success btn-default" id="btn-count-down">Count down</button>
+                            <button type="button" class="btn btn-block btn-info">Next Session</button>
                         </li>
                     </ul>
                     <!-- /.control-sidebar-menu -->
@@ -233,15 +223,69 @@
     <script src="../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../dist/js/demo.js"></script>
+
+    <script>window.jQuery || document.write('<script src="../dist/js/jquery-1.11.0.min.js"><\/script>')</script>
+    <script src="../dist/js/jquery-browser.js"></script>
+    <script src="../dist/jcountdown/jquery.jcountdown.min.js"></script>
     <script type="text/javascript">
-        function sure() {
-            var result = confirm("Are You Sure ?");
-            if (result == true) {
-                alert("You choose YES!");
-            } else {
-                alert("You choose NO!");
-            }
+        // Turn on Bootstrap
+        $('[data-toggle="tooltip"]').tooltip();
+
+        var minites = 10;
+        var config = {
+            timeText: get5MinutesText(minites), //倒计时时间，格式：年/月/日 时:分:秒
+            timeZone: '8', //时区，GMT号码
+            style: "flip", //显示的样式，可选值有flip,slide,metal,crystal(翻动、滑动、金属、水晶)
+            color: "black", //显示的颜色，可选值white,black(黑色、白色)
+            width: 0, //倒计时宽度，无限制，默认为0
+            textGroupSpace: 15, //天、时、分、秒之间间距
+            textSpace: 0, //数字之间间距
+            reflection: !0, //是否显示倒影
+            reflectionOpacity: 10, //倒影透明度
+            reflectionBlur: 0, //倒影模糊程度
+            dayTextNumber: 3, //倒计时天数数字个数
+            displayDay: 0, //是否显示天数
+            displayHour: 0, //是否显示小时数
+            displayMinute: !0, //是否显示分钟数
+            displaySecond: !0, //是否显示秒数
+            displayLabel: !0, //是否显示倒计时底部label
+            onFinish: function () { }//完成事件，您可以在时间结束时执行一些脚本，在创建倒计时时只需传递一个函数即可。
+        };
+
+        $(".countdown").jCountdown(config);
+        $(".countdown").jCountdown("stop");
+        $('#btn-count-down').click(function () {
+            $('.countdown').jCountdown("destroy");
+            config.timeText = get5MinutesText(minites);
+            $(".countdown").jCountdown(config);
+            $('.countdown').jCountdown("start");
+        });
+
+        $('#btn-reset').click(function () {
+            $('.countdown').jCountdown("destroy");
+            config.timeText = get5MinutesText(minites);
+            $(".countdown").jCountdown(config);
+            $(".countdown").jCountdown("stop");
+        });
+
+        function get5MinutesText(m) {
+            var date = new Date();
+
+            var year = date.getFullYear(),
+                month = date.getMonth() + 1,//月份是从0开始的
+                day = date.getDate(),
+                hour = date.getHours(),
+                min = date.getMinutes() + m,
+                sec = date.getSeconds() + 1;
+            var newTime = year + '/' +
+                month + '/' +
+                day + ' ' +
+                hour + ':' +
+                min + ':' +
+                sec;
+            return newTime;
         }
+
     </script>
 </body>
 </html>

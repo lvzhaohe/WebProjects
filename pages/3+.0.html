@@ -17,8 +17,6 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
-
-    <link rel="stylesheet" href="../dist/jcountdown/jcountdown.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -27,9 +25,11 @@
     <![endif]-->
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="../dist/jcountdown/jcountdown.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini  sidebar-collapse">
     <div class="wrapper">
+        <!-- Main Header -->
         <header class="main-header">
             <!-- Logo -->
             <a href="index.html" class="logo">
@@ -136,92 +136,61 @@
         <div class="content-wrapper">
             <div class="container">
                 <!-- START ACCORDION & CAROUSEL-->
-                <div class="row" style="width:100%;text-align:center;margin:40px auto;">
-                    <div class="col-md-6" style="width:100%;">
-                        <div class="box box-solid">
-                            <div class="box-body">
-                                <div class="starter-template">
-                                    <div class="panel panel-default" data-toggle="tooltip" data-placement="top" style="width:auto;border:none">
-                                        <div class="panel-body" style="width:auto;">
-                                            <div class="lead" id="clock"></div>
-                                            <div class="countdown"></div>
+                <!-- /.box-body -->
+                <div class="box row" style="margin:80px auto ;background-color: #ffffff;">
+                    <div class="box-header text-center">
+                        <h1>Statment  Order</h1>
+                    </div>
+                    <!-- /.box-header -->
+                    <div class="box-body no-padding" style="width:100%">
+                        <table class="table text-center">
+                            <tbody>
+                                <tr>
+                                    <td>1.</td>
+                                    <td class="speaker">CMPorts</td>
+                                    <td><span class="badge bg-blue">发言</span></td>
+                                </tr>
+                                <tr>
+                                    <td>2.</td>
+                                    <td class="speaker">Sri Lanka Gov</td>
+                                    <td><span class="badge bg-grey">等待</span></td>
+                                </tr>
+                                <tr>
+                                    <td>3.</td>
+                                    <td class="speaker">HRI</td>
+                                    <td><span class="badge bg-grey">等待</span></td>
+                                </tr>
+                                <tr>
+                                    <td>4.</td>
+                                    <td class="speaker">SAARC</td>
+                                    <td><span class="badge bg-grey">等待</span></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- /.box-body -->
+                    <div class="row" style="width:100%;text-align:center;margin:40px auto;">
+                        <div class="col-md-6" style="width:100%;">
+                            <div class="box box-solid">
+                                <div class="box-body">
+                                    <h2 class="text-light-blue" id="name">CMPorts</h2>
+                                    <h2 class="text-red">5 minutes left</h2>
+                                    <div class="starter-template">
+                                        <div class="panel panel-default" data-toggle="tooltip" data-placement="top" style="width:auto;border:none">
+                                            <div class="panel-body" style="width:auto;">
+                                                <div class="lead" id="clock"></div>
+                                                <div class="countdown"></div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
+                                <!-- /.box-body -->
                             </div>
-                            <!-- /.box-body -->
+                            <!-- /.box -->
                         </div>
-
-                        <!-- /.box -->
-                    </div>
-                    <!-- ./col -->
-                </div>
-                <h3>会议区</h3>
-                <div class="box" style="border:1px solid gray;padding-bottom: 10px">
-                    <div class="box-body">
-                        <div class="margin">
-                            <div class="col-lg-4">
-                                <div class="col-lg-1">
-                                </div>
-                                <button class="btn btn-default col-lg-10" type="button">Room A</button>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="col-lg-1">
-                                </div>
-                                <button class="btn btn-default col-lg-10" type="button">Room B</button>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="col-lg-1">
-                                </div>
-                                <button class="btn btn-default col-lg-10" type="button">Room C</button>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="box-body">
-                        <div class="margin">
-                            <div class="col-lg-4">
-                                <div class="col-lg-1">
-                                </div>
-                                <button class="btn btn-default col-lg-10" type="button">Room D</button>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="col-lg-1">
-                                </div>
-                                <button class="btn btn-default col-lg-10" type="button">Room E</button>
-                            </div>
-                            <div class="col-lg-4">
-                                <div class="col-lg-1">
-                                </div>
-                                <button class="btn btn-default col-lg-10" type="button">Room F</button>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- END ACCORDION & CAROUSEL-->
-                    <!-- /.content -->
-                </div>
-                <div class="box">
-                    <div class="box-body" style="padding:20px 10px">
-                        <div class="col-lg-6">
-                            <h4>
-                                Sri Lanka Gov: Invite CMPorts & HRI(ACCEPT)
-                            </h4>
-                        </div>
-                        <div class="col-lg-4">
-                            <div class="form-group" style="margin-bottom:0px">
-                                <select class="form-control select2" style="width: 100%;">
-                                    <option selected="selected">CMPorts</option>
-                                    <option>Sri Lanka Gov</option>
-                                    <option>HRI</option>
-                                    <option>SAARC</option>
-                                </select>
-                            </div>
-                        </div>
-                        <div class="col-lg-2">
-                            <button class="btn btn-default col-lg-10" type="button">Send</button>
-                        </div>
+                        <!-- ./col -->
                     </div>
                 </div>
-                <!-- /.container -->
             </div>
         </div>
         <!-- /.content-wrapper -->
@@ -246,15 +215,43 @@
             <div class="tab-content">
                 <!-- Home tab content -->
                 <div class="tab-pane active" id="control-sidebar-home-tab">
-                    <ul class="control-sidebar-menu" style="margin:200px auto">
+                    <ul class="control-sidebar-menu" style="margin:100px auto">
                         <li>
-                            <button type="button" class="btn btn-default btn-block" onClick="sure();" style="margin:10px auto">First Round</button>
-                            <button type="button" class="btn btn-default btn-block" onClick="sure();" style="margin:10px auto">Second Round</button>
+                            <div class="box">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">Roster</h3>
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body" id="wrap">
+                                    <div style="margin:10px auto;color:#000000;">
+                                        <span class="glyphicon glyphicon-volume-up"></span>
+                                        <span>CMPorts</span>
+                                    </div>
+                                    <div style="margin:10px auto;color:#000000; ">
+                                        <span class="glyphicon glyphicon-volume-up"></span>
+                                        <span>Sri Lanka Gov</span>
+                                    </div>
+                                    <div style="margin:10px auto;color:#000000;">
+                                        <span class="glyphicon glyphicon-volume-up"></span>
+                                        <span>HRI</span>
+                                    </div>
+                                    <div style="margin:10px auto;color:#000000;">
+                                        <span class="glyphicon glyphicon-volume-up"></span>
+                                        <span>SAARC</span>
+                                    </div>
+                                </div>
+                                <!-- /.box-body -->
+                            </div>
                         </li>
                     </ul>
-                    <ul class="control-sidebar-menu" style="margin:200px auto">
+                    <h3 class="control-sidebar-heading"> </h3>
+                    <h3 class="control-sidebar-heading"> </h3>
+                    <ul class="control-sidebar-menu">
                         <li>
+                            <button type="button" class="btn btn-block btn-primary" style="margin:10px auto">Generate</button>
+                            <button type="button" class="btn btn-block btn-primary" style="margin:10px auto">Release Order</button>
                             <button type="button" class="btn btn-block btn-success btn-default" id="btn-count-down">Count down</button>
+                            <button type="button" class="btn btn-block btn-default" id="btn-reset">Reset</button>
                             <button type="button" class="btn btn-block btn-info">Next Session</button>
                         </li>
                     </ul>
@@ -269,6 +266,8 @@
     </div>
     <!-- ./wrapper -->
     <!-- REQUIRED JS SCRIPTS -->
+    <!-- underscore -->
+    <script src="https://cdn.bootcss.com/underscore.js/1.9.0/underscore-min.js"></script>
     <!-- jQuery 3 -->
     <script src="../bower_components/jquery/dist/jquery.min.js"></script>
     <!-- Bootstrap 3.3.7 -->
@@ -289,7 +288,7 @@
         // Turn on Bootstrap
         $('[data-toggle="tooltip"]').tooltip();
 
-        var minites = 20;
+        var minites = 5;
         var config = {
             timeText: get5MinutesText(minites), //倒计时时间，格式：年/月/日 时:分:秒
             timeZone: '8', //时区，GMT号码
@@ -345,5 +344,60 @@
         }
 
     </script>
+    <script type="text/javascript">
+        var people = $('ul.control-sidebar-menu .box-body div span:last-child');
+        var a = ["CMPorts", "Sri Lanka Gov", "HRI", "SAARC"];
+        var generate = $('ul.control-sidebar-menu button:first-child');
+        people.mouseenter(function () {
+            $(this).css('cursor', 'pointer');
+        });
+        $(function () {
+            generate.click(function () {
+                var new_people = _.shuffle(a);
+                for (var i = 0; i < 4; i++) {
+                    people[i].innerText = new_people[i];
+                }
+            });
+        });
+
+        var m = $('.speaker');
+
+        var release = generate.next();
+        console.log(release);
+        $(function () {
+            release.click(function () {
+                if (confirm("Are You Sure ?")) {
+                    var people = $('ul.control-sidebar-menu .box-body div span:last-child')
+                    for (var i = 0; i < 4; i++) {
+                        m[i].innerText = people[i].innerText;
+                    }
+                    $('#name').text(people[0].innerText);
+                }
+            });
+        });
+        var next = $('ul.control-sidebar-menu button:last-child');
+        $(function () {
+            next.click(function () {
+                if (confirm("Are You Sure ?")) {
+                    window.location.href = "5.html";
+                }
+            })
+        })
+
+    </script>
+    <script src="../dist/js/ddsort.js"></script>
+    <script>
+        $('#wrap').DDSort({
+            target: 'div',
+            // floatStyle: {
+            // 	'border': '1px solid #ccc',
+            // 	'background-color': '#fff'
+            // }
+            up: function () {
+                $('ul.control-sidebar-menu .box-body div').css('margin', '10px auto').css('color', '#000000');
+            }
+        });
+    </script>
+
 </body>
 </html>
