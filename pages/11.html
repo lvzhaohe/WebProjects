@@ -207,12 +207,15 @@
             <div class="tab-content">
                 <!-- Home tab content -->
                 <div class="tab-pane active" id="control-sidebar-home-tab">
-                    <ul class="control-sidebar-menu" style="margin:300px auto">
-                        <li>
-                            <button type="button" class="btn btn-block btn-success" onClick="sure();" style="margin:10px auto;color:#ffffff">Release Chosen Crisi</button>
-                            <button type="button" class="btn btn-block btn-info" onClick="sure();" style="margin:10px auto">Skip</button>
-                        </li>
-                    </ul>
+                    <div class="box-body" id="wrap">
+                        <ul class="control-sidebar-menu" style="margin:300px auto">
+                            <li>
+                                <button type="button" class="btn btn-block btn-success" onClick="sure();" style="margin:10px auto;color:#ffffff">Release Chosen Crisi</button>
+                                <button type="button" class="btn btn-block btn-info" onClick="sure();" style="margin:10px auto">Skip</button>
+                            </li>
+                        </ul>
+                    </div>
+                    
                     <!-- /.control-sidebar-menu -->
                 </div>
             </div>
@@ -239,7 +242,6 @@
 
     <script src="../dist/js/demo.js"></script>
     <script src="../plugins/iCheck/icheck.min.js"></script>
-    <script>
     <script type="text/javascript">
         function sure() {
             var result = confirm("Are You Sure ?");
