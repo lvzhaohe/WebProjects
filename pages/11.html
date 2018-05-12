@@ -13,10 +13,13 @@
     <!-- Ionicons -->
     <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
     <!-- Theme style -->
+    <link rel="stylesheet" href="../plugins/select2/select2.min.css">
+
     <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="../plugins/iCheck/all.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -26,7 +29,26 @@
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Days+One'>  
+    <link rel='stylesheet prefetch' href='http://fonts.googleapis.com/css?family=Days+One'>
+    <style>
+    .iradio_flat-green{
+        top:15px;
+        background-image: url(http://adminlte.la998.com/plugins/iCheck/flat/blue.png);
+    }
+    .callout{
+    margin-left: 25px;
+    margin-top:-20px;
+    padding:15px;
+    background-color:white;
+    color:black;
+    border-top:2px solid #BEBEBE;
+    border-right:2px solid #BEBEBE;
+    border-bottom:2px solid #BEBEBE;
+    }
+    label{
+        margin-bottom: 0px
+    }
+    </style>  
 </head>
 <body class="hold-transition skin-blue sidebar-mini  sidebar-collapse">
     <div class="wrapper">
@@ -143,31 +165,24 @@
                         <h3 class="box-title ">Criss Database</h3>
                     </div><!-- /.box-header -->
                     <div class="box-body">
-                        <div class="form-group">
-                            <div class="radio">
-                                <div>
-                                    <div class="box-body" style="padding:20px">
-                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                                        <div class="callout callout-info lead" style="margin:0">
-                                            <p>
-                                                AdminLTE uses all of Bootstrap 3 components. It's a good start to review
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div class="box-body" style="padding:20px">
-                                        <input type="radio" name="optionsRadios" id="optionsRadios1" value="option1" checked="">
-                                        <div class="callout callout-info lead" style="margin:0">
-                                            <p>
-                                                AdminLTE uses all of Bootstrap 3 components. It's a good start to review
-                                            </p>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div><!-- /.box-body -->
+                <div class="form-group" style="padding-bottom:0px;margin-bottom: 0px">
+                <label>
+                     <input type="radio" name="r3" class="flat-red">
+                   <div class="callout ">
+                <h4 style="padding:0px;margin:0px">I am an info callout!</h4>
+              </div>
+                </label>
                 </div>
-
+                <div class="form-group" style="padding-bottom: 0px;margin-bottom: 0px">
+                <label>
+                     <input type="radio" name="r3" class="flat-red">
+                   <div class="callout ">
+                <h4 style="padding:0px;margin:0px">I am an info callout!</h4>
+              </div>
+                </label>
+                </div>
+                </div>
+              </div>
             </div>
         </div>
         <!-- /.content-wrapper -->
@@ -220,7 +235,11 @@
     <!-- AdminLTE App -->
     <script src="../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
+    <script src="../plugins/select2/select2.full.min.js"></script>
+
     <script src="../dist/js/demo.js"></script>
+    <script src="../plugins/iCheck/icheck.min.js"></script>
+    <script>
     <script type="text/javascript">
         function sure() {
             var result = confirm("Are You Sure ?");
@@ -230,6 +249,22 @@
                 alert("You choose NO!");
             }
         }
+    </script>
+    <script>
+      $(function () {
+    $('input[type="checkbox"].minimal, input[type="radio"].minimal').iCheck({
+      checkboxClass: 'icheckbox_minimal-blue',
+      radioClass: 'iradio_minimal-blue'
+    });
+        $('input[type="checkbox"].flat-red, input[type="radio"].flat-red').iCheck({
+      checkboxClass: 'icheckbox_flat-green',
+      radioClass: 'iradio_flat-green'
+    });
+    $('input[type="checkbox"].minimal-red, input[type="radio"].minimal-red').iCheck({
+      checkboxClass: 'icheckbox_minimal-red',
+      radioClass: 'iradio_minimal-red'
+    });    
+          });
     </script>
 </body>
 </html>
