@@ -17,6 +17,7 @@
     <!-- AdminLTE Skins. Choose a skin from the css/skins
          folder instead of downloading all of them to reduce the load. -->
     <link rel="stylesheet" href="../dist/css/skins/_all-skins.min.css">
+    <link rel="stylesheet" href="../dist/css/x0popup.min.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -257,23 +258,8 @@
 
         $(".countdown").jCountdown(config);
         $(".countdown").jCountdown("stop");
-        $('#btn-count-down').click(function () {
-            $('.countdown').jCountdown("destroy");
-            config.timeText = get5MinutesText(minites);
-            $(".countdown").jCountdown(config);
-            $('.countdown').jCountdown("start");
-        });
-
-        $('#btn-reset').click(function () {
-            $('.countdown').jCountdown("destroy");
-            config.timeText = get5MinutesText(minites);
-            $(".countdown").jCountdown(config);
-            $(".countdown").jCountdown("stop");
-        });
-
         function get5MinutesText(m) {
             var date = new Date();
-
             var year = date.getFullYear(),
                 month = date.getMonth() + 1,//月份是从0开始的
                 day = date.getDate(),
@@ -289,6 +275,120 @@
             return newTime;
         }
 
+    </script>
+     <script src="../dist/js/x0popup.min.js"></script> 
+     <script>
+        var send2= $('#btn-reset');
+        var input2= $('input.form-control');
+        var content2;
+        $(function() {
+            send2.click(function(){
+                x0p({
+    title: 'Async Operation',
+    text: 'Try to do some operation.',
+    icon: 'info',
+    animationType: 'fadeIn',
+    buttons: [
+        {
+            type: 'cancel'
+        },
+        {
+            type: 'info',
+            text: 'Do It!',
+            showLoading: true
+        }
+    ]
+}, function(button) {
+    if(button == 'info') {
+            $('.countdown').jCountdown("destroy");
+            config.timeText = get5MinutesText(minites);
+            $(".countdown").jCountdown(config);
+            $(".countdown").jCountdown("stop");
+        setTimeout(function() {
+            x0p('Done', null, 'ok', false);
+        }, 1);
+    }
+});
+
+                content2 = input2.val();
+                setTimeout("input.val('')", 300);
+                console.log(content2);
+            });
+        });
+
+
+        var send3= $('.btn-info');
+        var input3= $('input.form-control');
+        var content3;
+        $(function() {
+            send3.click(function(){
+                x0p({
+    title: 'Async Operation',
+    text: 'Try to do some operation.',
+    icon: 'info',
+    animationType: 'fadeIn',
+    buttons: [
+        {
+            type: 'cancel'
+        },
+        {
+            type: 'info',
+            text: 'Do It!',
+            showLoading: true
+        }
+    ]
+}, function(button) {
+    if(button == 'info') {
+       window.location.href = "page5.1.html";
+        setTimeout(function() {
+            x0p('Done', null, 'ok', false);
+        }, 1);
+    }
+});
+
+                content3= input.val();
+                setTimeout("input3.val('')", 300);
+                console.log(content3);
+            });
+        });
+
+         var send = $('#btn-count-down');
+        var input = $('input.form-control');
+        var content;
+        $(function() {
+            send.click(function(){
+                x0p({
+    title: 'Async Operation',
+    text: 'Try to do some operation.',
+    icon: 'info',
+    animationType: 'fadeIn',
+    buttons: [
+        {
+            type: 'cancel'
+        },
+        {
+            type: 'info',
+            text: 'Do It!',
+            showLoading: true
+        }
+    ]
+}, function(button) {
+    if(button == 'info') {
+            $('.countdown').jCountdown("destroy");
+            config.timeText = get5MinutesText(minites);
+            $(".countdown").jCountdown(config);
+            $('.countdown').jCountdown("start");
+        setTimeout(function() {
+            x0p('Done', null, 'ok', false);
+        }, 1);
+    }
+});
+
+                content = input.val();
+                setTimeout("input.val('')", 300);
+                console.log(content);
+            });
+        });       
     </script>
 </body>
 </html>
