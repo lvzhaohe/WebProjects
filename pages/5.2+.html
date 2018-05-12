@@ -26,6 +26,7 @@
     <!-- Google Font -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     <link rel="stylesheet" href="../dist/jcountdown/jcountdown.css">
+    <link rel="stylesheet" href="../dist/css/x0popup.min.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini  sidebar-collapse">
     <div class="wrapper">
@@ -265,7 +266,7 @@
     <!-- AdminLTE App -->
     <script src="../dist/js/adminlte.min.js"></script>
     <!-- AdminLTE for demo purposes -->
-    <script src="dist/js/demo.js"></script>
+    <script src="../dist/js/demo.js"></script>
 
     <script>window.jQuery || document.write('<script src="../dist/js/jquery-1.11.0.min.js"><\/script>')</script>
     <script src="../dist/js/jquery-browser.js"></script>
@@ -339,6 +340,21 @@
                 alert("You choose NO!");
             }
         }
+    </script>
+    <script src="../dist/js/x0popup.min.js"></script> 
+    <script>
+        var send = $('button.btn.btn-primary.btn-flat');
+        var input = $('input.form-control');
+        var content;
+        $(function() {
+            send.click(function(){
+                x0p('消息已发送，请等待审核');
+                content = input.val();
+                setTimeout("input.val('')", 300);
+                console.log(content);
+            });
+        });
+        
     </script>
 </body>
 </html>
