@@ -171,7 +171,7 @@
                                         <div class="col-lg-5">
                                             <div class="form-group">
                                                 <select class="form-control select2" style="width: 100%;">
-                                                    <option selected="selected">CMPorts</option>
+                                                    <option selected='selected'>CMPorts</option>
                                                     <option>Sri Lanka Gov</option>
                                                     <option>HRI</option>
                                                     <option>SAARC</option>
@@ -184,7 +184,7 @@
                                         <div class="col-lg-5">
                                             <div class="form-group">
                                                 <select class="form-control select2" style="width: 100%;">
-                                                    <option selected="selected">CMPorts</option>
+                                                    <option selected='selected'>CMPorts</option>
                                                     <option>Sri Lanka Gov</option>
                                                     <option>HRI</option>
                                                     <option>SAARC</option>
@@ -217,7 +217,7 @@
                                             <div class="col-lg-5">
                                                 <div class="form-group">
                                                     <select class="form-control select2" style="width: 100%;">
-                                                        <option selected="selected">CMPorts</option>
+                                                        <option>CMPorts</option>
                                                         <option>Sri Lanka Gov</option>
                                                         <option>HRI</option>
                                                         <option>SAARC</option>
@@ -230,7 +230,7 @@
                                             <div class="col-lg-5">
                                                 <div class="form-group">
                                                     <select class="form-control select2" style="width: 100%;">
-                                                        <option selected="selected">CMPorts</option>
+                                                        <option>CMPorts</option>
                                                         <option>Sri Lanka Gov</option>
                                                         <option>HRI</option>
                                                         <option>SAARC</option>
@@ -375,20 +375,23 @@
 
     </script>
     <script>
-        var select = $('select.form-control.select2');
-        var one = select.first().find('option');
-        select.each(function(){
-            for (var i = 0; i < 4; i++){
- //               if ($(this).text() === $(this).find('option')[i].innerText){
- //                   $(this).find('option')[i].hide();
-                    
-  //              }
-            }
-            console.log($(this).find('[selected=selected]')[0].innerText);
-            
-        })
-        
-        console.log(one);
+        var select = $('select.form-control.select2');\
+        var name = [];
+    $(function(){
+        select.first().change(function(){
+            // var checkText =$(this).find("option:selected").text();
+            // console.log(checkText);
+            name[0]=$(this).val();
+            console.log(name[0]);
+            // select.each(function(){
+            //     $(this).find('option').each(function(){
+            //         if ($(this).text() === checkValue){
+            //             $(this).hide();
+            //         }
+            //     })
+            // });
+        });
+    })
     </script>
 </body>
 </html>
