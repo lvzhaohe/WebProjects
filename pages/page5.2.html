@@ -334,16 +334,6 @@
         }
 
     </script>
-    <script type="text/javascript">
-        function sure() {
-            var result = confirm("Are You Sure ?");
-            if (result == true) {
-                alert("You choose YES!");
-            } else {
-                alert("You choose NO!");
-            }
-        }
-    </script>
     <script src="../dist/js/x0popup.min.js"></script> 
     <script>
         var send = $('button.btn.btn-primary.btn-flat');
@@ -357,7 +347,28 @@
                 console.log(content);
             });
         });
-        
+        var send2 = $('#btn-count-down');
+        var input2 = $('input.form-control');
+        var content2;
+        $(function() {
+            send2.click(function(){
+                x0p('消息已发送，请等待审核');
+                content2 = input2.val();
+                setTimeout("input2.val('')", 300);
+                console.log(content2);
+            });
+        });
+        var send3 = $('button.btn.btn-info');
+        var input3 = $('input.form-control');
+        var content3;
+        $(function() {
+            send3.click(function(){
+                x0p('消息已发送，请等待审核');
+                content3 = input3.val();
+                setTimeout("input3.val('')", 300);
+                console.log(content3);
+            });
+        });       
     </script>
 </body>
 </html>

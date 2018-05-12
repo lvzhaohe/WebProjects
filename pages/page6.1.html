@@ -171,7 +171,7 @@
                                         <div class="col-lg-5">
                                             <div class="form-group">
                                                 <select class="form-control select2" style="width: 100%;">
-                                                    <option selected="selected">CMPorts</option>
+                                                    <option selected='selected'>CMPorts</option>
                                                     <option>Sri Lanka Gov</option>
                                                     <option>HRI</option>
                                                     <option>SAARC</option>
@@ -184,7 +184,7 @@
                                         <div class="col-lg-5">
                                             <div class="form-group">
                                                 <select class="form-control select2" style="width: 100%;">
-                                                    <option selected="selected">CMPorts</option>
+                                                    <option selected='selected'>CMPorts</option>
                                                     <option>Sri Lanka Gov</option>
                                                     <option>HRI</option>
                                                     <option>SAARC</option>
@@ -194,12 +194,12 @@
                                     </div>
                                     <div class="btn-group col-lg-4">
                                         <div class="col-lg-5" style="padding-right: 0px">
-                                            <button class="btn btn-success col-lg-12" type="button">Action</button>
+                                            <button class="btn btn-primary col-lg-12" type="button">Invite</button>
                                         </div>
                                         <div class="col-lg-2" style="padding:0px;">
                                         </div>
                                         <div class="col-lg-5 " style="padding-left: 0px">
-                                            <button class="btn btn-danger col-lg-12" type="button">Action</button>
+                                            <button class="btn btn-danger col-lg-12" type="button">Cancle</button>
                                         </div>
                                     </div>
                                 </div>
@@ -211,13 +211,13 @@
                                         <div class="btn-group col-lg-4">
                                             <div class="col-lg-1">
                                             </div>
-                                            <button class="btn btn-default col-lg-10" type="button">Room A</button>
+                                            <button class="btn btn-default col-lg-10" type="button">Room B</button>
                                         </div>
                                         <div class="btn-group col-lg-4">
                                             <div class="col-lg-5">
                                                 <div class="form-group">
                                                     <select class="form-control select2" style="width: 100%;">
-                                                        <option selected="selected">CMPorts</option>
+                                                        <option>CMPorts</option>
                                                         <option>Sri Lanka Gov</option>
                                                         <option>HRI</option>
                                                         <option>SAARC</option>
@@ -230,7 +230,7 @@
                                             <div class="col-lg-5">
                                                 <div class="form-group">
                                                     <select class="form-control select2" style="width: 100%;">
-                                                        <option selected="selected">CMPorts</option>
+                                                        <option>CMPorts</option>
                                                         <option>Sri Lanka Gov</option>
                                                         <option>HRI</option>
                                                         <option>SAARC</option>
@@ -240,12 +240,12 @@
                                         </div>
                                         <div class="btn-group col-lg-4">
                                             <div class="col-lg-5" style="padding-right: 0px">
-                                                <button class="btn btn-success col-lg-12" type="button">Action</button>
+                                                <button class="btn btn-primary col-lg-12" type="button">Invite</button>
                                             </div>
                                             <div class="col-lg-2" style="padding:0px;">
                                             </div>
                                             <div class="col-lg-5 " style="padding-left: 0px">
-                                                <button class="btn btn-danger col-lg-12" type="button">Action</button>
+                                                <button class="btn btn-danger col-lg-12" type="button">Cancle</button>
                                             </div>
                                         </div>
                                     </div>
@@ -376,19 +376,51 @@
     </script>
     <script>
         var select = $('select.form-control.select2');
-        var one = select.first().find('option');
-        select.each(function(){
-            for (var i = 0; i < 4; i++){
- //               if ($(this).text() === $(this).find('option')[i].innerText){
- //                   $(this).find('option')[i].hide();
-                    
-  //              }
-            }
-            console.log($(this).find('[selected=selected]')[0].innerText);
-            
-        })
+        var player = [];
+        player[1] = player[2] = player[3] = player[0] = select.first().find("option:selected").text();
+    $(function(){
+        select.first().click(function(){
+            player[0]=$(this).val();
+            console.log(player)
+        });
+        select.slice(1,2).click(function(){
+            player[1]=$(this).val();
+        });
+        select.slice(2,3).click(function(){
+            player[2]=$(this).val();
+        });
+        select.last().click(function(){
+            player[3]=$(this).val();
+        });
         
-        console.log(one);
+        var invite = $('button.btn.btn-primary.col-lg-12');
+        var cancle = $('button.btn.btn-danger.col-lg-12');
+        var room = $('button.btn.btn-default.col-lg-10');
+        invite.first().click(function(){
+            room.first().text(`Room A   ${player[0]} & ${player[1]}`);
+            cancle.first().remove();
+            $(this).text('Meeting').off();
+            $(this).click(function() {
+                alert('asdfsd');
+            });
+        });
+        invite.last().click(function(){
+            room.last().text(`Room B   ${player[2]} & ${player[3]}`);
+            cancle.last().remove();
+            $(this).text('Meeting').off();
+            $(this).click(function() {
+                alert('asdfsd');
+            });
+        });
+        cancle.first().click(function(){
+            room.first().text('Room A');
+            select.slice(0,2).first().attr('selected','selected');      
+        });
+        cancle.last().click(function(){
+            room.last().text('Room B');
+            select.slice(0,2).first().attr('selected','selected');      
+        });
+    });
     </script>
 </body>
 </html>

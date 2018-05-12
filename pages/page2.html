@@ -20,6 +20,7 @@
 	
 	<!-- jQuery countdonwn ui css. and by Yang -->
 	<link rel="stylesheet" href="../dist/jcountdown/jcountdown.css">
+    <link rel="stylesheet" href="../dist/css/x0popup.min.css">
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -358,25 +359,39 @@
         
         });
 
-        var select = $('ul.control-sidebar-menu button:first-child');
-        $(function () {
-            
-            select.click(function() {
-                if(confirm("Are You Sure ?")){
-                    $('#name').text(person);
-                }
-            });
-        });
-
-        var next = $('ul.control-sidebar-menu button:last-child');
-        $(function () {
-            next.click(function() {
-                if(confirm("Are You Sure ?")){
-                    window.location.href = "page3.html";
-                }
-            });
-        });
     </script>
-
+    <script src="../dist/js/x0popup.min.js"></script> 
+     <script>
+        var send = $('#btn-reset');
+        var input = $('input.form-control');
+        var content;
+        $(function() {
+            send.click(function(){
+                x0p('消息已发送，请等待审核');
+                content = input.val();
+                setTimeout("input.val('')", 300);
+                console.log(content);
+            });
+        }); 
+        var send2 = $('#btn-count-down');
+        console.log(send2)
+        var input2 = $('input.form-control');
+        $(function() {
+            send2.click(function(){
+                x0p('消息已发送，请等待审核');
+            });
+        });
+        var send3 = $('button.btn.btn-info');
+        var input3 = $('input.form-control');
+        var content3;
+        $(function() {
+            send3.click(function(){
+                x0p('消息已发送，请等待审核');
+                content3 = input3.val();
+                setTimeout("input3.val('')", 300);
+                console.log(content3);
+            });
+        });       
+    </script>
 </body>
 </html>
