@@ -363,33 +363,26 @@
     <script src="../dist/js/x0popup.min.js"></script> 
      <script>
         var send = $('#btn-reset');
-        var input = $('input.form-control');
-        var content;
         $(function() {
             send.click(function(){
-                x0p('消息已发送，请等待审核');
+                x0p('Confirmation', 'Are you sure?', 'warning');
                 content = input.val();
-                setTimeout("input.val('')", 300);
-                console.log(content);
             });
         }); 
         var send2 = $('#btn-count-down');
-        console.log(send2)
-        var input2 = $('input.form-control');
         $(function() {
             send2.click(function(){
-                x0p('消息已发送，请等待审核');
+                 var x = x0p('Confirmation', 'Are you sure?', 'warning');
+                if (x === true)
+                {
+                    console.log('yes');
+                }
             });
         });
         var send3 = $('button.btn.btn-info');
-        var input3 = $('input.form-control');
-        var content3;
         $(function() {
             send3.click(function(){
-                x0p('消息已发送，请等待审核');
-                content3 = input3.val();
-                setTimeout("input3.val('')", 300);
-                console.log(content3);
+
             });
         });       
     </script>

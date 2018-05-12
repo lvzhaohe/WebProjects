@@ -12,6 +12,7 @@
     <link rel="stylesheet" href="../bower_components/font-awesome/css/font-awesome.min.css">
     <!-- Ionicons -->
     <link rel="stylesheet" href="../bower_components/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="../plugins/select2/select2.min.css">
     <!-- Theme style -->
     <link rel="stylesheet" href="../dist/css/AdminLTE.min.css">
     <!-- AdminLTE Skins. Choose a skin from the css/skins
@@ -201,11 +202,7 @@
                 </div>
                 <div class="box">
                     <div class="box-body" style="padding:20px 10px">
-                        <div class="col-lg-6">
-                            <h4>
-                                Sri Lanka Gov: Invite CMPorts & HRI(ACCEPT)
-                            </h4>
-                        </div>
+                     <div class="col-lg-8">
                         <div class="col-lg-4">
                             <div class="form-group" style="margin-bottom:0px">
                                 <select class="form-control select2" style="width: 100%;">
@@ -216,9 +213,36 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-lg-2">
-                            <button class="btn btn-default col-lg-10" type="button">Send</button>
+                        <div class="col-lg-1" style="padding:0px"> 
+                         <h3 style="margin:0px;text-align:center"> Invite</h3>
                         </div>
+                        <div class="col-lg-6">
+                            <div class="form-group">
+                                <select class="form-control select2" multiple="multiple" data-placeholder="Select a State" style="width: 100%;">
+                                    <option>CMPorts</option>
+                                    <option>Sri Lanka Gov</option>
+                                    <option>HRI</option>
+                                    <option>SAARC</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-2">
+                      <div class="form-group" style="margin-bottom:0px">
+                        <select class="form-control select2" style="width: 100%;">
+                                <option>Room A</option>
+                                <option>Room B</option>
+                                <option>Room C</option>
+                                <option>Room D</option>
+                                <option>Room E</option>
+                                <option>Room F</option>
+
+                        </select>
+                      </div>
+                    </div>
+                    <div class="col-lg-2">
+                        <button class="btn btn-primary col-lg-10" type="button">Send</button>
+                    </div>
                     </div>
                 </div>
                 <!-- /.container -->
@@ -253,6 +277,9 @@
                                 <button type="button" class="btn btn-default btn-block" onClick="sure();" style="margin:10px auto">Second Round</button>
                             </li>
                         </ul>
+                    </div>
+                    
+                    <div class="box-body" id="wrap">
                         <ul class="control-sidebar-menu" style="margin:200px auto">
                             <li>
                                 <button type="button" class="btn btn-block btn-success btn-default" id="btn-count-down">Count down</button>
@@ -282,6 +309,7 @@
     <script src="../bower_components/fastclick/lib/fastclick.js"></script>
     <!-- AdminLTE App -->
     <script src="../dist/js/adminlte.min.js"></script>
+    <script src="../plugins/select2/select2.full.min.js"></script>
     <!-- AdminLTE for demo purposes -->
     <script src="../dist/js/demo.js"></script>
 
@@ -348,5 +376,32 @@
         }
 
     </script>
+    <script>
+    $(function () {
+        $(".select2").select2();
+    });
+    </script>
+    <script>
+        var room = $('select.form-control.select2').last();
+        var invitor = $('select.form-control.select2').first();
+        var invited = $('select.form-control.select2').slice(1,2);
+        $(function() {
+            room.change(function(){
+        //        console.log($(this).val());
+            })
+            var send = $('.btn.col-lg-10').last();
+            var room1 = $('.btn.col-lg-10').slice(0,6);
+            send.click(function() {
+                room1.each(function() {
+                   if ($(this).text().substring(0,6) === room.val()){
+                       $(this).text(room.val() + "   " + invitor.val() + "," + invited.val()).attr('class', 'btn btn-primary col-lg-10');
+                   }
+                });
+            
+            })
+        })
+
+    </script>
+
 </body>
 </html>
